@@ -1,0 +1,2 @@
+- Comparação performance formato arquivos
+    https://towardsdatascience.com/data-lake-comparing-performance-of-known-big-data-formats-eace705b6fd8

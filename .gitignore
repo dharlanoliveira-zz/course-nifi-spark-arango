@@ -1,0 +1,10 @@
+.mysql/data
+.postgres/data
+.airbyte
+.nifi/conf/archive
+.nifi/content_repository
+.nifi/flowfile_repository
+.nifi/provenance_repository
+.airflow/logs
+.spark
+dados

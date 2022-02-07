@@ -1,0 +1,6 @@
+Parlamentar (cpf)
+Legislatura (ano, UF)
+Partido(sigla)
+Gasto(valorBruto,valorGlosa,valorLiquido, mes, ano, url)
+TipoGasto(nome)
+Fornecedor(nome,cnpj)

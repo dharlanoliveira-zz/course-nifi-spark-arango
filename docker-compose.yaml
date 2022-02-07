@@ -1,0 +1,97 @@
+version: "3.9"
+services:
+  nifi:
+    image: "apache/nifi:1.15.3"    
+    user: "root"
+    volumes:
+      - ./dados:/home/nifi
+      - ./.mysql/jdbc:/opt/nifi/nifi-current/jdbc
+      - ./.nifi/conf:/opt/nifi/nifi-current/conf
+      - ./.nifi/content_repository:/opt/nifi/nifi-current/content_repository
+      - ./.nifi/flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
+      - ./.nifi/provenance_repository:/opt/nifi/nifi-current/provenance_repository
+    ports:
+      - '8443:8443'
+    environment:
+       - NIFI_JVM_HEAP_INIT=1G
+       - NIFI_JVM_HEAP_MAX=8G
+  spark:
+    image: docker.io/bitnami/spark:3.1.2
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    volumes:
+      - ./dados:/dados
+    ports:
+      - '8080:8080'
+      - '7077:7077'
+  spark-worker-1:
+    image: docker.io/bitnami/spark:3.1.2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_WORKER_MEMORY=8G
+      - SPARK_WORKER_CORES=4
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    volumes:
+      - ./dados:/dados
+    ports:
+      - '4040:4040'
+  arangodb:
+    image: arangodb/arangodb:3.8.0
+    environment:
+      - ARANGO_ROOT_PASSWORD=root
+    ports:
+      - '8529:8529'
+  drill:
+    image: apache/drill:1.19.0
+    tty: true
+    stdin_open: true
+    environment:
+      - ARANGO_ROOT_PASSWORD=root
+    volumes:
+      - ./dados:/dados
+      - ./.drill/drill.conf:/opt/drill/conf/storage-plugins-override.conf
+    ports:
+      - '8047:8047'
+  zeppelin:
+     image: apache/zeppelin:0.10.0
+     user: "root"
+     volumes:
+       - ./dados:/dados
+       - ./.spark:/spark
+       - ./.zeppelin/logs:/opt/zeppelin/logs
+       - ./.zeppelin/notebook:/opt/zeppelin/notebook
+     ports:
+       - '8090:8080'
+  # mysql:
+  #   image: mysql:8.0.26
+  #   volumes:
+  #     - ./.mysql/data/:/var/lib/mysql
+  #   ports:
+  #     - '3306:3306'
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  # postgres:
+  #   image: postgres
+  #   restart: always
+  #   volumes:
+  #     - ./.postgres/data/:/var/lib/postgresql/data
+  #   ports:
+  #     - '5432:5432'
+  #   environment:
+  #    POSTGRES_USER: root
+  #    POSTGRES_PASSWORD: root
+  # elastic:
+  #   image: elasticsearch:7.14.1
+  #   environment:
+  #     - "discovery.type=single-node"
+  #   ports:
+  #     - '9300:9300'
+  #     - '9200:9200'

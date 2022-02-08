@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="46dc206f-3db8-4c5c-b2a8-a26ef3ddb72b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.drill/drill.conf" beforeDir="false" afterPath="$PROJECT_DIR$/.drill/drill.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nifi/conf/flow.xml.gz" beforeDir="false" afterPath="$PROJECT_DIR$/.nifi/conf/flow.xml.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.zeppelin/notebook/exercicio2-resultado_2GFK62Q4D.zpln" beforeDir="false" afterPath="$PROJECT_DIR$/.zeppelin/notebook/exercicio2-resultado_2GFK62Q4D.zpln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="24koeroSa0gAcgHGtVFbYuVs3Dm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.format.on.save.advertiser.fired" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46dc206f-3db8-4c5c-b2a8-a26ef3ddb72b" name="Changes" comment="" />
+      <created>1644184045714</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644184045714</updated>
+      <workItem from="1644184047257" duration="613000" />
+      <workItem from="1644264017763" duration="2000" />
+      <workItem from="1644264072702" duration="301000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

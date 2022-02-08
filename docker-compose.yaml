@@ -88,10 +88,10 @@ services:
   #   environment:
   #    POSTGRES_USER: root
   #    POSTGRES_PASSWORD: root
-  # elastic:
-  #   image: elasticsearch:7.14.1
-  #   environment:
-  #     - "discovery.type=single-node"
-  #   ports:
-  #     - '9300:9300'
-  #     - '9200:9200'
+  elastic:
+     image: elasticsearch:7.14.1
+     environment:
+       - "discovery.type=single-node"
+     ports:
+       - '9300:9300'
+       - '9200:9200'
